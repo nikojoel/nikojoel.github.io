@@ -75,13 +75,41 @@
             font-size: 14px;
             color: #cccccc;
         }
+
+        .links {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .links a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 15px;
+            background-color: #0073e6;
+            color: #ffffff;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .links a:hover {
+            background-color: #005bb5;
+        }
     </style>
 </head>
 
 <body>
     <!-- Empty content placeholder -->
     <div id="empty-content">
-        Welcome to BiS! Navigate to <a href="#whats-new" style="color: #0073e6;">What's New</a> for updates.
+        Welcome to BiS! Navigate using the buttons below. Use the app for more detailed instructions!
+
+        <div class="links">
+            <a href="mailto:app.ios.bis@gmail.com?subject=BiS iOS feedback">Send Feedback</a>
+            <a href="mailto:app.ios.bis@gmail.com?subject=BiS iOS feature suggestion">Suggest a Feature</a>
+            <a href="#whats-new">What's New</a>
+        </div>
     </div>
 
     <!-- What's New Section -->
