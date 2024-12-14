@@ -1,1 +1,140 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiS</title>
+    <style>
+        /* Global styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Empty content styling */
+        #empty-content {
+            text-align: center;
+            margin-top: 40vh;
+            font-size: 1.5rem;
+            color: #777777;
+        }
+
+        /* What's New section */
+        #whats-new {
+            display: none;
+            /* Hidden by default */
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .header p {
+            font-size: 15px;
+            color: #aaaaaa;
+        }
+
+        .update {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #333333;
+            padding-bottom: 20px;
+        }
+
+        .update:last-child {
+            border-bottom: none;
+        }
+
+        .update .date-version {
+            font-size: 14px;
+            font-weight: 500;
+            color: #aaaaaa;
+            margin-bottom: 8px;
+        }
+
+        .update .title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .update .description {
+            font-size: 14px;
+            color: #cccccc;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Empty content placeholder -->
+    <div id="empty-content">
+        Welcome to BiS! Navigate to <a href="#whats-new" style="color: #0073e6;">What's New</a> for updates.
+    </div>
+
+    <!-- What's New Section -->
+    <div id="whats-new">
+        <div class="header">
+            <h1>What’s New</h1>
+            <p>There is constant improvement happening so keep your auto updates on to never miss a thing. View past
+                updates here.</p>
+        </div>
+
+        <!-- Update 1 -->
+        <div class="update">
+            <div class="date-version">December 2024 • V1.0</div>
+            <div class="title">BiS launch 🚀</div>
+            <div class="description">
+                The launch of BiS is here! An app designed to revolutionize your dog show
+                experience! With BiS, you can do so much more, all completely free:
+                <ul>
+                    <li>📅 Save Dog Shows: Save your favorite and attended shows.</li>
+                    <li>⏱️ Real-Time Results: View the results live as they happen.</li>
+                    <li>🔔 Smart Notifications: Get reminders before the entry to a show closes so you’re always on
+                        time.</li>
+                    <li>🗓️ Show Schedule & Ring Map: Easy access to the complete schedule and ring map of the show all
+                        from one place.</li>
+                </ul>
+                BiS is designed for iOS users, offering a clean, familiar and modern experience with Light and Dark Mode
+                options to match your preferences. Whether you’re a handler, breeder, or just a dog enthusiast, BiS is
+                your ultimate companion for every show season.
+                <br><br>
+                Best of all? BiS is 100% free!
+                <br><br>
+                Available today, in the App Store.
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- JavaScript to toggle visibility based on URL hash -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const hash = window.location.hash; // Get the current hash from the URL
+            const whatsNewSection = document.getElementById('whats-new');
+            const emptyContent = document.getElementById('empty-content');
+
+            if (hash === '#whats-new') {
+                emptyContent.style.display = 'none'; // Hide empty content
+                whatsNewSection.style.display = 'block'; // Show the "What's New" section
+            } else {
+                emptyContent.style.display = 'block'; // Show empty content
+                whatsNewSection.style.display = 'none'; // Hide "What's New"
+            }
+        });
+    </script>
+</body>
+
+</html>
