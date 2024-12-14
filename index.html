@@ -25,7 +25,8 @@
         }
 
         /* What's New section */
-        #whats-new {
+        #whats-new,
+        #whats-new-fi {
             display: none;
             /* Hidden by default */
             max-width: 600px;
@@ -112,7 +113,7 @@
         </div>
     </div>
 
-    <!-- What's New Section -->
+    <!-- What's New Section (English) -->
     <div id="whats-new">
         <div class="header">
             <h1>What’s New</h1>
@@ -145,22 +146,68 @@
             </div>
         </div>
     </div>
+
+    <!-- What's New Section (Finnish) -->
+    <div id="whats-new-fi">
+        <div class="header">
+            <h1>Uutta</h1>
+            <p>Sovellus kehittyy jatkuvasti, joten pidä automaattiset päivitykset päällä. Katso
+                aikaisemmat päivitykset täältä.</p>
+        </div>
+
+        <!-- Päivitys 1 -->
+        <div class="update">
+            <div class="date-version">Joulukuu 2024 • V1.0</div>
+            <div class="title">BiS julkaisu 🚀</div>
+            <div class="description">
+                BiS-sovelluksen julkaisu on täällä! Sovellus on suunniteltu mullistamaan koiranäyttelykokemuksesi!
+                <ul>
+                    <li>📅 Tallenna koiranäyttelyt: Säilytä suosikkitapahtumat ja osallistumisesi.</li>
+                    <li>⏱️ Tulokset reaaliajassa: Katso tulokset suorana, ilman maksullista luetteloa.</li>
+                    <li>🔔 Ilmoitukset: Muistutukset ilmoittautumisen sulkeutumisesta.</li>
+                    <li>🗓️ Aikataulu ja kehäkartta: Helppo pääsy kaikkiin tietoihin yhdestä paikasta.</li>
+                </ul>
+                BiS on suunniteltu iOS-käyttäjille sekä tarjoaa selkeän ja modernin käyttökokemuksen. Olitpa ohjaaja,
+                kasvattaja tai vain koiraharrastaja, BiS on
+                paras kumppanisi jokaiselle näyttelyviikonlopulle.
+                <br><br>
+                Ja mikä parasta? BiS on täysin ilmainen!
+                <br><br>
+                Saatavilla tänään App Storesta.
+            </div>
+        </div>
     </div>
 
     <!-- JavaScript to toggle visibility based on URL hash -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const hash = window.location.hash; // Get the current hash from the URL
             const whatsNewSection = document.getElementById('whats-new');
+            const whatsNewFiSection = document.getElementById('whats-new-fi');
             const emptyContent = document.getElementById('empty-content');
 
-            if (hash === '#whats-new') {
-                emptyContent.style.display = 'none'; // Hide empty content
-                whatsNewSection.style.display = 'block'; // Show the "What's New" section
-            } else {
-                emptyContent.style.display = 'block'; // Show empty content
-                whatsNewSection.style.display = 'none'; // Hide "What's New"
+            // Function to update the displayed content based on the hash
+            function updateContent() {
+                const hash = window.location.hash; // Get the current hash from the URL
+
+                // Hide all sections initially
+                emptyContent.style.display = 'block';
+                whatsNewSection.style.display = 'none';
+                whatsNewFiSection.style.display = 'none';
+
+                if (hash === '#whats-new') {
+                    emptyContent.style.display = 'none';
+                    whatsNewSection.style.display = 'block';
+                } else if (hash === '#whats-new-fi') {
+                    emptyContent.style.display = 'none';
+                    whatsNewFiSection.style.display = 'block';
+                }
             }
+
+            // Initial content update on page load
+            updateContent();
+
+            // Listen for hash changes and update content dynamically
+            window.addEventListener('hashchange', updateContent);
         });
     </script>
 </body>
