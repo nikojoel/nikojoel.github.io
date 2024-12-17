@@ -21,13 +21,14 @@
             text-align: center;
             margin-top: 40vh;
             font-size: 1.5rem;
-            color: #777777;
+            color: #ffffff;
         }
 
         /* What's New section */
         #faq,
         #faq-fi,
         #whats-new,
+        #privacy-policy,
         #whats-new-fi {
             display: none;
             /* Hidden by default */
@@ -106,13 +107,35 @@
 <body>
     <!-- Empty content placeholder -->
     <div id="empty-content">
-        Welcome to BiS! Use the app for more detailed instructions!
-
+        <h1>BiS</h1>
+        <p>Dogshows in your pocket</p>
         <div class="links">
             <a href="mailto:app.ios.bis@gmail.com?subject=BiS iOS feedback">Send Feedback</a>
             <a href="mailto:app.ios.bis@gmail.com?subject=BiS iOS feature suggestion">Suggest a Feature</a>
             <a href="#whats-new">What's New</a>
+            <a href="#privacy-policy">Privacy Policy</a>
             <a href="#faq">FAQ</a>
+        </div>
+    </div>
+
+    <div id="privacy-policy">
+        <div class="header">
+            <h1>Privacy Policy</h1>
+            <p>This policy applies to the BiS application.</p>
+        </div>
+        <div class="update">
+            <div class="title">Security</div>
+            <div class="description">
+                All network requests are made through HTTPS using the built in URLSession class. The scheduled
+                notifications are
+                also stored locally.
+            </div>
+        </div>
+        <div class="update">
+            <div class="title">Collected information</div>
+            <div class="description">
+                The app does not collect or retain any information of the user.
+            </div>
         </div>
     </div>
 
@@ -124,10 +147,8 @@
         </div>
         <div class="update">
             <div class="title">Why is the show results not updating?</div>
-            <div class="description">
-                As the data is fetched from a third-party server, outside of BiS's scope, there might be delays in the
-                retrieval. The app
-                queries the results every 30 seconds to provide a seamless experience.
+            <div class="description">The app queries the results every 30 seconds to provide a seamless experience. In
+                rare cases the results might not be updated on the server side, thus not appearing in the application.
             </div>
         </div>
         <div class="update">
@@ -149,15 +170,14 @@
     <div id="faq-fi">
         <div class="header">
             <h1>Usein kysytyt kysymykset 🙋‍♂️</h1>
-            <p>Alta löydät usein kysytyt kysymykset. Jos et löydä vastausta kysymykseesi, ota meihin yhteyttä
-                sähköpostitse osoitteessa app.ios.bis@gmail.com, niin palaamme asiaan mahdollisimman pian!</p>
+            <p>Alta löydät usein kysytyt kysymykset. Jos et löydä vastausta kysymykseesi, ota yhteyttä
+                sähköpostitse osoitteessa app.ios.bis@gmail.com.</p>
         </div>
         <div class="update">
             <div class="title">Miksi näyttelyn tulokset eivät päivity?</div>
             <div class="description">
-                Koska tiedot haetaan kolmannen osapuolen palvelimelta, joka ei ole BiS:n hallinnassa, tietojen
-                päivittymisessä voi olla viiveitä. Sovellus hakee tulokset 30 sekunnin välein tarjotakseen sujuvan
-                käyttökokemuksen.
+                Sovellus hakee tulokset 30 sekunnin välein tarjotakseen sujuvan käyttökokemuksen. Harvoissa tapauksissa
+                tuloksia ei ehkä päivitetä palvelinpuolella, jolloin ne eivät näy sovelluksessa.
             </div>
         </div>
         <div class="update">
@@ -248,6 +268,7 @@
             const whatsNewSection = document.getElementById('whats-new');
             const whatsNewFiSection = document.getElementById('whats-new-fi');
             const faqSection = document.getElementById('faq');
+            const privacyPolicy = document.getElementById('privacy-policy');
             const faqFiSection = document.getElementById('faq-fi');
             const emptyContent = document.getElementById('empty-content');
 
@@ -261,6 +282,7 @@
                 whatsNewFiSection.style.display = 'none';
                 faqSection.style.display = 'none';
                 faqFiSection.style.display = 'none';
+                privacyPolicy.style.display = 'none';
 
                 if (hash === '#whats-new') {
                     emptyContent.style.display = 'none';
@@ -274,6 +296,9 @@
                 } else if (hash === '#faq-fi') {
                     emptyContent.style.display = 'none';
                     faqFiSection.style.display = 'block';
+                } else if (hash === '#privacy-policy') {
+                    emptyContent.style.display = 'none';
+                    privacyPolicy.style.display = 'block';
                 }
             }
 
